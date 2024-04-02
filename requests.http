@@ -1,0 +1,10 @@
+###
+POST http//:localhost:3001/api/generos HTTP/1.1
+Content-Type: application/json
+
+
+    {
+  "name": "Drama",
+  "state": "Activo",
+  "description": "Género centrado en conflictos emocionales y personales."
+}
