@@ -1,10 +1,92 @@
 ###
-POST http//:localhost:3001/api/generos HTTP/1.1
+
+GET http://localhost:3001/api/genero HTTP/1.1
+
+
+###
+POST http://localhost:3001/api/genero HTTP/1.1
 Content-Type: application/json
 
 
     {
-  "name": "Drama",
+  "name": "Terror",
   "state": "Activo",
-  "description": "Género centrado en conflictos emocionales y personales."
+  "description": "Género centrado en la exploración de los miedos.."
 }
+
+
+
+
+###
+PUT http://localhost:3001/api/genero/664ec713e3d2a37a05ef2ffa HTTP/1.1
+
+
+
+###
+DELETE http://localhost:3001/api/genero/66510dc8c67c742a079709fb HTTP/1.1
+
+
+###
+GET http://localhost:3001/api/director HTTP/1.1
+
+### Añadir un nuevo director
+POST http://localhost:3001/api/director HTTP/1.1
+Content-Type: application/json
+
+{
+  "name":"Woody Allen", 
+  "state": "Activo"
+}
+
+###
+PUT http://localhost:3001/api/director HTTP/1.1
+
+
+###
+DELETE http://localhost:3001/api/director HTTP/1.1
+
+
+###
+GET http://localhost:3001/api/productora HTTP/1.1
+
+### Añadir un nuevo director
+POST http://localhost:3001/api/productora HTTP/1.1
+Content-Type: application/json
+
+{
+  "name":"David Brow Baren", 
+  "state": "Inactivo"
+}
+
+###
+PUT http://localhost:3001/api/productora HTTP/1.1
+
+
+###
+DELETE http://localhost:3001/api/productora HTTP/1.1
+
+
+###
+GET http://localhost:3001/api/tipo  HTTP/1.1
+
+
+###
+POST http://localhost:3001/api/tipo  HTTP/1.1
+Content-Type: application/json
+
+{
+  "name":"Pelicula",
+  "description": "centrado en conflictos emocionales y personales."
+}
+
+###
+PUT http://localhost:3001/api/tipo  HTTP/1.1
+
+
+###
+DELETE http://localhost:3001/api/tipo HTTP/1.1
+
+###
+GET http://localhost:3001/api/media HTTP/1.1
+
+

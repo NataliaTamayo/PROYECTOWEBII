@@ -1,24 +1,15 @@
+const mongoose = require('mongoose');
 // controllers/generoController.js
 const Genero = require('../models/genero');
 
 // Controlador para obtener todos los géneros
 exports.getAllGeneros = async (req, res) => {
+   
     try {
         const generos = await Genero.find();
         res.json(generos);
     } catch (error) {
         res.status(500).json({ error: 'Error al obtener los géneros' });
-    }
-};
-
-
-// Obtener todos los géneros
-exports.getAllGeneros = async (req, res) => {
-    try {
-        const generos = await Genero.find();
-        res.json(generos);
-    } catch (error) {
-        res.status(500).json({ message: error.message });
     }
 };
 
@@ -42,7 +33,7 @@ exports.createGenero = async (req, res) => {
 exports.updateGenero = async (req, res) => {
     try {
         const genero = await Genero.findById(req.params.id);
-        if (genero == null) {
+        if (!genero) {
             return res.status(404).json({ message: 'Género no encontrado' });
         }
 
@@ -69,13 +60,20 @@ exports.updateGenero = async (req, res) => {
 
 // Borrar un género existente
 exports.deleteGenero = async (req, res) => {
-    try {
-        const genero = await Genero.findById(req.params.id);
-        if (genero == null) {
+    const {id} = req.params;
+      
+    //si el ID es valido 
+    if (!mongoose.Types.ObjectId.isValid(id)){
+        return res.status(400).json({ message:'ID genero valido'});
+    }
+
+        try {
+        const genero = await Genero.findById(id);
+        if (!genero) {
             return res.status(404).json({ message: 'Género no encontrado' });
         }
 
-        await genero.remove();
+        await genero.deleteOne();
         res.json({ message: 'Género eliminado' });
     } catch (error) {
         res.status(500).json({ message: error.message });

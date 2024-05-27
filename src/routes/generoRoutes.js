@@ -8,10 +8,10 @@ const generoController = require('../controllers/generoController');
 
 
 // Rutas para el módulo de género
-router.get('/generos', generoController.getAllGeneros);
-router.post('/generos', generoController.createGenero);
-router.put('/generos/:id', generoController.updateGenero);
-router.delete('/generos/:id', generoController.deleteGenero);
+router.get('/', generoController.getAllGeneros);
+router.post('/', generoController.createGenero);
+router.put('/:id', generoController.updateGenero);
+router.delete('/:id', generoController.deleteGenero);
 
 
 

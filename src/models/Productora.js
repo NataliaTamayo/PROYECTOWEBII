@@ -2,12 +2,12 @@
 const mongoose = require('mongoose');
 
 const productoraSchema = new mongoose.Schema({
-    nombre: { type: String, required: true },
-    estado: { type: String, enum: ['Activo', 'Inactivo'], default: 'Activo' },
-    fechaCreacion: { type: Date, default: Date.now },
-    fechaActualizacion: { type: Date, default: Date.now },
+    name: { type: String, required: true },
+    state: { type: String, enum: ['Activo', 'Inactivo'], default: 'Activo' },
+    create_date: { type: Date, default: Date.now },
+    date_update: { type: Date, default: Date.now },
     slogan: String,
-    descripcion: String
+    description: String
 });
 
 const Productora = mongoose.model('Productora', productoraSchema);

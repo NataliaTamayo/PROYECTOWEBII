@@ -1,20 +1,28 @@
 {
   "name": "proyectowebii",
   "version": "1.0.0",
-  "description": "",
+  "description": "API de peliculas",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js" 
+    "dev": "nodemon src/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Natalia Tamayo",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "mongoose": "^8.2.4"
+    "form-data": "^4.0.0",
+    "gridfs-stream": "^1.1.1",
+    "mongoose": "^8.4.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4",
+    "multer-gridfs-storage": "^5.0.2",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
+    "module-alias": "^2.2.3",
     "nodemon": "^3.1.0"
   }
 }

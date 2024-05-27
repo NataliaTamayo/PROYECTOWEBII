@@ -2,8 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const generoRoutes = require('./routes/generoRoutes');
 const directorRoutes = require('./routes/directorRoutes');
+const productoraRoutes = require('./routes/productoraRoutes');
+const Tipo = require('../models/tipo');
+const mediaRoutes = require('./routes/mediaRoutes');
+
 
 const app = express();
+//puerto de la app
 const port = process.env.PORT || 3001;
 
 console.log("Intentando establecer conexión con MongoDB Atlas...");
